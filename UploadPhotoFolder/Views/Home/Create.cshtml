@@ -1,0 +1,21 @@
+﻿@model PhotoUploadViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post"  enctype="multipart/form-data">
+    <div class="col-md-12">
+        <div asp-validation-summary="All" class="text-danger">
+        </div>
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input asp-for="Photo" class="form-control" />
+            <span asp-validation-for="Photo" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload it </button>
+        </div>
+
+</form>

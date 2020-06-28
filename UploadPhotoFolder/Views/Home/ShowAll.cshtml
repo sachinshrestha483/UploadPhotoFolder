@@ -1,0 +1,32 @@
+﻿@model List<pic>
+@{
+    ViewData["Title"] = "ShowAll";
+}
+
+<h1>ShowAll</h1>
+
+@foreach (var item in Model)
+{
+    <br />
+    <br />
+    <div class="border p-3 m-3">
+        <div class="row" align="center">
+            <div class="col">
+                <a class="btn btn-primary"   asp-action="edit" asp-controller="home"
+                   asp-route-id="@item.id" >Edit </a>
+               
+            </div>
+            <div class="col">
+                <a  class="btn btn-secondary" asp-action="Delete" asp-controller="home"
+                   asp-route-id="@item.id"  >Delete</a>
+            </div>
+        </div>
+        <h3> @item.id </h3>
+
+        <img src="/images/@item.Address" class="img-fluid" alt="Responsive image" />
+        <br />
+        <br />
+    </div>
+    <br />
+    <br />
+}
